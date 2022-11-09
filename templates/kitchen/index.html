@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Restaurant`s home page</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Guest page</h1>
+    <p>Welcome to the Light Stars/p>
+    <h3>Information: </h3>
+    <ul>
+        <li>Number of dish type: {{ num_dish_type }}</li>
+        <li>Number of chefs: {{ num_cooks }}</li>
+        <li>Number of dish: {{ num_dish }}</li>
+    </ul>
+    <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}</p>
+{% endblock %}
