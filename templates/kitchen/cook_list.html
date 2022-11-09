@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+    <h1>
+        Cook List
+        <a style="float: right" class="btn btn-primary" href="{% url 'kitchen:cook-create' %}">+</a>
+    </h1>
+    <p>
+        <form action="" method="get" class="form-inline">
+            {{ search_form|crispy }}
+            <input class="btn btn-primary" type="submit" value="🔍">
+        </form>
+    </p>
+    {% if cook_list %}
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Username</th>
+                <th>Years of experience</th>
+            </tr>
+
+            {% for cook in cook_list %}
+                <tr>
+                    <td>
+                        <a href="{{ cook.get_absolute_url }}">{{ cook.id }}</a>
+                    </td>
+                    <td>
+                        <a href="{{ cook.get_absolute_url }}">{{ cook.first_name }} {{ cook.last_name }}</a>
+                    </td>
+                    <td>
+                        {{ cook.username }}
+                    </td>
+                    <td>
+                        {{ cook.years_of_experience|default_if_none:"" }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>There are no cooks in a restaurant</p>
+    {% endif %}
+{% endblock %}
