@@ -26,7 +26,7 @@ from kitchen.views import (
 
 
 urlpatterns = [
-    path("kitchen/", index, name="index"),
+    path("", index, name="index"),
 
 
     path(

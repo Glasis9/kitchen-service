@@ -4,9 +4,11 @@
 {% block content %}
     <h1>
         Dish List
-        <a style="float: right" class="btn btn-primary" href="{% url 'kitchen:dish-create' %}">+</a>
     </h1>
     <p>
+        <a style="float: right; margin-left: 10px" class="btn btn-primary" href="{% url 'kitchen:ingredient-list' %}">View ingredients</a>
+
+        <a style="float: right" class="btn btn-primary" href="{% url 'kitchen:dish-create' %}">Append</a>
         <form action="" method="get" class="form-inline">
             {{ search_form|crispy }}
             <input class="btn btn-primary" type="submit" value="🔍">

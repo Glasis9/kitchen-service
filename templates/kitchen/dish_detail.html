@@ -3,12 +3,23 @@
 {% block content %}
     <h1>
         Title: {{ dish.name }}
-        <a style="float: right" class="btn btn-primary" href="{% url 'kitchen:dish-detail' pk=dish.id %}">Edit</a>
+        <a style="float: right" class="btn btn-primary" href="{% url 'kitchen:dish-update' pk=dish.id %}">Edit</a>
     </h1>
     <p><strong>Price: </strong>{{ dish.price }}</p>
     <p><strong>Description: </strong>{{ dish.dish_type.name }}</p>
 
     <div class="ml-3">
+    <h3>Ingredients</h3>
+        {% for ingredient in dish.ingredients.all %}
+            <hr>
+            <p class="text-muted"><strong>Id:</strong>{{ ingredient.id }}</p>
+            <p>
+                Name:
+                <strong>{{ ingredient.name }}</strong>
+            </p>
+        {% empty %}
+            <p>No Ingredients!</p>
+        {% endfor %}
         <h3>Cooks</h3>
         {% for cook in dish.cooks.all %}
             <hr>
@@ -17,11 +28,12 @@
                 <strong>Full name:</strong>
                 {{ cook.first_name }} {{ cook.last_name }}
                 {% if cook.years_of_experience %}
-                    ({{ cook.years_of_experience }})
+                    (exp: {{ cook.years_of_experience }} years)
                 {% endif %}
             </p>
         {% empty %}
             <p>No Cooks!</p>
         {% endfor %}
     </div>
+    <a style="float: left" class="btn btn-primary" href="{% url 'kitchen:dish-list' %}">Menu</a>
 {% endblock %}

@@ -4,9 +4,9 @@
 {% block content %}
     <h1>
         Cook List
-        <a style="float: right" class="btn btn-primary" href="{% url 'kitchen:cook-create' %}">+</a>
     </h1>
     <p>
+        <a style="float: right" class="btn btn-primary" href="{% url 'kitchen:cook-create' %}">Append</a>
         <form action="" method="get" class="form-inline">
             {{ search_form|crispy }}
             <input class="btn btn-primary" type="submit" value="🔍">
@@ -27,7 +27,10 @@
                         <a href="{{ cook.get_absolute_url }}">{{ cook.id }}</a>
                     </td>
                     <td>
-                        <a href="{{ cook.get_absolute_url }}">{{ cook.first_name }} {{ cook.last_name }}</a>
+                        <a href="{{ cook.get_absolute_url }}">
+                            {{ cook.first_name }} {{ cook.last_name }}
+                        </a>
+                        {% if user == cook %} (Me){% endif %}
                     </td>
                     <td>
                         {{ cook.username }}
