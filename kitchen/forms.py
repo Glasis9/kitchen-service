@@ -10,7 +10,9 @@ def validate_years_of_experience(
     years_of_experience,
 ):
     if years_of_experience < 2:
-        raise ValidationError("Years of experience must be more or equal 2 years")
+        raise ValidationError(
+            "Years of experience must be more or equal 2 years"
+        )
     return years_of_experience
 
 
@@ -26,7 +28,9 @@ class CookCreationForm(UserCreationForm):
         )
 
     def clean_years_of_experience(self):
-        return validate_years_of_experience(self.cleaned_data["years_of_experience"])
+        return validate_years_of_experience(
+            self.cleaned_data["years_of_experience"]
+        )
 
 
 class CookExperienceUpdateForm(forms.ModelForm):
@@ -35,7 +39,9 @@ class CookExperienceUpdateForm(forms.ModelForm):
         fields = ["years_of_experience"]
 
     def clean_years_of_experience(self):
-        return validate_years_of_experience(self.cleaned_data["years_of_experience"])
+        return validate_years_of_experience(
+            self.cleaned_data["years_of_experience"]
+        )
 
 
 class CookSearchForm(forms.Form):

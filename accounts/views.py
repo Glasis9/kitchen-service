@@ -19,7 +19,11 @@ def login_view(request):
             error_context = {
                 "errors": "Invalid credentials"
             }
-            return render(request, "registration/login.html", context=error_context)
+            return render(
+                request,
+                "registration/login.html",
+                context=error_context
+            )
 
 
 def logout_view(request):

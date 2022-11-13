@@ -66,4 +66,5 @@ class Dish(models.Model):
         return reverse('kitchen:dish-detail', args=[str(self.id)])
 
     def __str__(self):
-        return f"{self.name} (price: {self.price}, dish type: {self.dish_type})"
+        return f"{self.name} (price: {self.price}, " \
+               f"dish type: {self.dish_type})"
