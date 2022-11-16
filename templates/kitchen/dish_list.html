@@ -8,7 +8,7 @@
     <p>
         <a style="float: right; margin-left: 10px; margin-top: 8px" class="btn btn-warning bi bi-list-check" href="{% url 'kitchen:ingredient-list' %}"> View ingredients</a>
 
-        <a style="float: right; margin-top: 8px" class="btn btn-warning bi bi-file-earmark-plus" href="{% url 'kitchen:dish-create' %}"> Append</a>
+        <a style="float: right; margin-top: 8px" class="btn btn-warning bi bi-file-earmark-plus" href="{% url 'kitchen:dish-append' %}"> Append</a>
         <form action="" method="get" class="form-inline">
             {{ search_form|crispy }}
             <input class="btn btn-warning" type="submit" value="🔍">

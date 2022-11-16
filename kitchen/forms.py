@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
-from kitchen.models import Cook, Dish, Ingredient, DishType
+from kitchen.models import Cook, Dish, Ingredient
 
 
 def validate_years_of_experience(

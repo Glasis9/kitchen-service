@@ -2,7 +2,7 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-    <h1>{{ object|yesno:"Update, Create" }} Ingredient</h1>
+    <h1>{{ object|yesno:"Update, Append" }} Ingredient</h1>
 
     <form action="" method="post" novalidate>
         {% csrf_token %}

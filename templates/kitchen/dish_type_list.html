@@ -6,7 +6,7 @@
         Dish type list
     </h1>
     <p>
-        <a style="float: right; margin-top: 8px" class="btn btn-warning bi bi-file-earmark-plus" href="{% url 'kitchen:dish-type-create' %}"> Append</a>
+        <a style="float: right; margin-top: 8px" class="btn btn-warning bi bi-file-earmark-plus" href="{% url 'kitchen:dish-type-append' %}"> Append</a>
         <form action="" method="get" class="form-inline">
             {{ search_form|crispy }}
             <input class="btn btn-warning" type="submit" value="🔍">

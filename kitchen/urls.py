@@ -35,9 +35,9 @@ urlpatterns = [
         name="dish-type-list",
     ),
     path(
-        "dish-type/create",
+        "dish-type/append",
         DishTypeCreateView.as_view(),
-        name="dish-type-create",
+        name="dish-type-append",
     ),
     path(
         "dish-type/<int:pk>/update/",
@@ -62,9 +62,9 @@ urlpatterns = [
         name="cook-detail",
     ),
     path(
-        "cooks/create/",
+        "cooks/append/",
         CookCreateView.as_view(),
-        name="cook-create",
+        name="cook-append",
     ),
     path(
         "cooks/<int:pk>/update/",
@@ -84,9 +84,9 @@ urlpatterns = [
         name="ingredient-list",
     ),
     path(
-        "ingredients/create",
+        "ingredients/append",
         IngredientCreateView.as_view(),
-        name="ingredient-create",
+        name="ingredient-append",
     ),
     path(
         "ingredients/<int:pk>/update/",
@@ -111,9 +111,9 @@ urlpatterns = [
         name="dish-detail",
     ),
     path(
-        "dishes/create",
+        "dishes/append",
         DishCreateView.as_view(),
-        name="dish-create",
+        name="dish-append",
     ),
     path(
         "dishes/<int:pk>/update/",
