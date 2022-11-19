@@ -35,7 +35,7 @@ urlpatterns = [
         name="dish-type-list",
     ),
     path(
-        "dish-type/append",
+        "dish-type/append/",
         DishTypeCreateView.as_view(),
         name="dish-type-append",
     ),
@@ -84,7 +84,7 @@ urlpatterns = [
         name="ingredient-list",
     ),
     path(
-        "ingredients/append",
+        "ingredients/append/",
         IngredientCreateView.as_view(),
         name="ingredient-append",
     ),
@@ -111,7 +111,7 @@ urlpatterns = [
         name="dish-detail",
     ),
     path(
-        "dishes/append",
+        "dishes/append/",
         DishCreateView.as_view(),
         name="dish-append",
     ),
