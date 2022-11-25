@@ -4,7 +4,7 @@ Django project for managing dishs, cooks, dish types and ingredients in Restaura
 
 ## Check it out!
 
-[Kitchen service project deployed to Heroku](PASTE_LINK_HERE)
+[Kitchen service project deployed to Render](https://best-kitchen-service-oleg.onrender.com/)
 
 ## Installation
 
