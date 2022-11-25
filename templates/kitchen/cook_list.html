@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+    <h1>
+        Cook List
+    </h1>
+    <p>
+        <a style="float: right; margin-top: 8px" class="btn btn-warning bi bi-file-earmark-plus" href="{% url 'kitchen:cook-append' %}"> Append</a>
+        <form action="" method="get" class="form-inline">
+            {{ search_form|crispy }}
+            <input class="btn btn-warning" type="submit" value="🔍">
+        </form>
+    </p>
+    {% if cook_list %}
+        <table class="table table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Username</th>
+                <th>Years of experience</th>
+            </tr>
+
+            {% for cook in cook_list %}
+                <tr>
+                    <td>
+                        <a style="color: #F6D066" href="{{ cook.get_absolute_url }}">{{ cook.id }}</a>
+                    </td>
+                    <td>
+                        <a style="color: #F6D066" href="{{ cook.get_absolute_url }}">
+                            {{ cook.first_name }} {{ cook.last_name }}
+                        </a>
+                        {% if user == cook %} (Me){% endif %}
+                    </td>
+                    <td>
+                        {{ cook.username }}
+                    </td>
+                    <td>
+                        {{ cook.years_of_experience|default_if_none:"" }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>There are no cooks in a restaurant</p>
+    {% endif %}
+{% endblock %}

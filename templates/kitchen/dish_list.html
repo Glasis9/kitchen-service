@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+    <h1>
+        Dish List
+    </h1>
+    <p>
+        <a style="float: right; margin-left: 10px; margin-top: 8px" class="btn btn-warning bi bi-list-check" href="{% url 'kitchen:ingredient-list' %}"> View ingredients</a>
+
+        <a style="float: right; margin-top: 8px" class="btn btn-warning bi bi-file-earmark-plus" href="{% url 'kitchen:dish-append' %}"> Append</a>
+        <form action="" method="get" class="form-inline">
+            {{ search_form|crispy }}
+            <input class="btn btn-warning" type="submit" value="🔍">
+        </form>
+    </p>
+    {% if dish_list %}
+        <table class="table table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+
+            {% for dish in dish_list %}
+                <tr>
+                    <td>
+                        <a style="color: #F6D066" href="{{ dish.get_absolute_url }}">{{ dish.id }}</a>
+                    </td>
+                    <td>
+                        <a style="color: #F6D066" href="{{ dish.get_absolute_url }}">{{ dish.name }}</a>
+                    </td>
+                    <td>
+                        {{ dish.price }}
+                    </td>
+                    <td>
+                        {{ dish.description }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>There are no dishes in menu</p>
+    {% endif %}
+{% endblock %}

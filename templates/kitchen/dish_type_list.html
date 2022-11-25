@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+    <h1>
+        Dish type list
+    </h1>
+    <p>
+        <a style="float: right; margin-top: 8px" class="btn btn-warning bi bi-file-earmark-plus" href="{% url 'kitchen:dish-type-append' %}"> Append</a>
+        <form action="" method="get" class="form-inline">
+            {{ search_form|crispy }}
+            <input class="btn btn-warning" type="submit" value="🔍">
+        </form>
+    </p>
+
+    {% if dish_type_list %}
+        <table class="table table-dark">
+            <str>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+
+                {% for dish_type in dish_type_list %}
+                    <tr>
+                        <td>
+                            {{ dish_type.id }}
+                        </td>
+                        <td>
+                            {{ dish_type.name }}
+                        </td>
+                        <td>
+                            <a style="color: #F6D066" href="{% url 'kitchen:dish-type-update' pk=dish_type.id %}">Update</a>
+                        </td>
+                        <td>
+                            <a style="color: #F6D066" href="{% url 'kitchen:dish-type-delete' pk=dish_type.id %}">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </str>
+        </table>
+    {% else %}
+        <p>The are no dish type in list</p>
+    {% endif %}
+
+{% endblock %}
