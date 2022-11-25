@@ -10,6 +10,7 @@ colorama==0.4.5
 coreapi==2.3.3
 coreschema==0.0.4
 distlib==0.3.6
+dj-database-url==1.0.0
 Django==4.1.2
 django-crispy-forms==1.14.0
 -e git+https://github.com/jazzband/django-debug-toolbar.git@a859b7cdc131e3bf71f74643fffc3c45b108ad5e#egg=django_debug_toolbar
@@ -35,6 +36,7 @@ pathspec==0.10.1
 platformdirs==2.5.2
 pluggy==1.0.0
 pre-commit==2.20.0
+psycopg2==2.9.5
 py==1.11.0
 pycodestyle==2.8.0
 pyflakes==2.4.0
@@ -54,3 +56,4 @@ tzdata==2022.2
 uritemplate==4.1.1
 urllib3==1.26.9
 virtualenv==20.16.5
+whitenoise==6.2.0
