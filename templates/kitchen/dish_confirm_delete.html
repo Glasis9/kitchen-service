@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Delete Dish</h1>
+
+<p>Are you want to delete the dish: {{ dish }}?</p>
+<p><i>All Ingredient and Cook will be also delete!</i></p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes, delete" class="btn btn-danger"/>
+</form>
+
+{% endblock %}

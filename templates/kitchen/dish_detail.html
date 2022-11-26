@@ -35,7 +35,10 @@
             <p>No Cooks!</p>
         {% endfor %}
     </div>
-    <a style="float: left" class="btn btn-warning bi bi-menu-app" href="{% url 'kitchen:dish-list' %}"> Menu</a>
-    <br>
-    <br>
+    <a class="btn btn-warning bi bi-menu-app" href="{% url 'kitchen:dish-list' %}">
+        Menu
+    </a>
+    <a class="btn btn-danger link-to-page" href="{% url 'kitchen:dish-delete' pk=dish.id %}">
+        Delete
+    </a>
 {% endblock %}
