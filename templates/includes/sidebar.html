@@ -1,14 +1,14 @@
 <ul class="sidebar-nav list-group" style="text-align: center">
     {% if user.is_authenticated %}
         <li class="bi bi-person-check list-group-item"> User: {{ user.username }}</li>
-        <li class="bi bi-door-open list-group-item"><a style="color: #F6D066" href="{% url 'logout' %}"> Logout</a></li>
+        <li class="bi bi-door-open list-group-item"><a style="color: #FFD700" href="{% url 'logout' %}"> Logout</a></li>
     {% else %}
-        <li class="bi bi-box-arrow-right list-group-item"><a style="color: #F6D066" href="{% url 'login' %}"> Login</a></li>
+        <li class="bi bi-box-arrow-right list-group-item"><a style="color: #FFD700" href="{% url 'login' %}"> Login</a></li>
     {% endif %}
     <br>
 
-    <li class="bi bi-house-door list-group-item"><a style="color: #F6D066" href="{% url 'kitchen:index' %}"> Home page</a></li>
-    <li class="bi bi-people list-group-item"><a style="color: #F6D066" href="{% url 'kitchen:cook-list' %}"> Cooks</a></li>
-    <li class="bi bi-menu-app list-group-item"><a style="color: #F6D066" href="{% url 'kitchen:dish-list' %}"> Menu</a></li>
-    <li class="bi bi-menu-up list-group-item"><a style="color: #F6D066" href="{% url 'kitchen:dish-type-list' %}"> Dish type</a></li>
+    <li class="bi bi-house-door list-group-item"><a style="color: #FFD700" href="{% url 'kitchen:index' %}"> Home page</a></li>
+    <li class="bi bi-people list-group-item"><a style="color: #FFD700" href="{% url 'kitchen:cook-list' %}"> Cooks</a></li>
+    <li class="bi bi-menu-app list-group-item"><a style="color: #FFD700" href="{% url 'kitchen:dish-list' %}"> Menu</a></li>
+    <li class="bi bi-menu-up list-group-item"><a style="color: #FFD700" href="{% url 'kitchen:dish-type-list' %}"> Dish type</a></li>
 </ul>

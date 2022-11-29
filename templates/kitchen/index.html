@@ -5,13 +5,15 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Welcome to the Best French Restaurant</h1>
-    <h2>Information: </h2>
-    <ul>
-        <li>Number of chefs: {{ num_cooks }}</li>
-        <li>Number of dish: {{ num_dish }}</li>
-        <li>Number of dish type: {{ num_dish_type }}</li>
-        <li>Number of ingredients: {{ num_ingredients }}</li>
-    </ul>
-    <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}</p>
+    <div class="substrate">
+        <h1>Welcome to the Best French Restaurant</h1>
+        <h2>Information: </h2>
+        <ul>
+            <li>Number of chefs: {{ num_cooks }}</li>
+            <li>Number of dish: {{ num_dish }}</li>
+            <li>Number of dish type: {{ num_dish_type }}</li>
+            <li>Number of ingredients: {{ num_ingredients }}</li>
+        </ul>
+        <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}</p>
+    </div>
 {% endblock %}

@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Delete Ingredient</h1>
+    <div class="substrate">
+        <h1>Delete Ingredient</h1>
 
-<p>Are you want to delete the ingredient: {{ ingredient }}?</p>
-<p><i>All Dish with this Ingredient will be also delete!</i></p>
+        <p>Are you want to delete the ingredient: {{ ingredient }}?</p>
+        <p><i>All Dish with this Ingredient will be also delete!</i></p>
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <input type="submit" value="Yes, delete" class="btn btn-danger"/>
-</form>
-
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Yes, delete" class="btn btn-danger"/>
+        </form>
+    </div>
 {% endblock %}

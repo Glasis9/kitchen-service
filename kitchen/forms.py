@@ -57,12 +57,14 @@ class DishCreationForm(forms.ModelForm):
     cooks = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),
         widget=forms.CheckboxSelectMultiple,
-        required=False
+        required=False,
+        initial=0,
     )
     ingredients = forms.ModelMultipleChoiceField(
         queryset=Ingredient.objects.all(),
         widget=forms.CheckboxSelectMultiple,
-        required=False
+        required=False,
+        initial=0,
     )
 
     class Meta:
