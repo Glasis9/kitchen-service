@@ -1,6 +1,6 @@
 # Kitchen Service
 
-Django project for managing dishs, cooks, dish types and ingredients in Restaurant 
+Django project for managing dishes, cooks, dish types and ingredients in Restaurant 
 
 ## Check it out!
 
